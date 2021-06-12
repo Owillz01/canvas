@@ -1,0 +1,30 @@
+section{
+    background-image: url('../../assets/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.logo--wrapper{
+    max-width: 20px;;
+    max-height: 20px;
+    display: inline-block;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.btn__style{
+    border: 1px solid #dc3545;
+}
+
+.overlay{
+    background-color: #000000eb;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,51 @@
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-md-3" style="background-color: rgb(255, 255, 255);">
+            <div class="control--wrapper">
+                <div class="mb-2 hr">
+                    <label for="body">Select stroke color</label> &nbsp;
+                    <!-- <div> -->
+                        <input type="color" id="body" [(ngModel)]="colorValue" (change)="changeColor()" name="body" value="#f6b73c">
+                    <!-- </div> -->
+                </div>        
+                <div class="mb-2">
+                    <label for="vol" class="form-label">brush width</label>
+                    <div>
+                        <input type="range" id="vol" class="form-range" [(ngModel)]="brushWidth" (change)="changeBrushWidth()" name="vol" min="1" max="150">
+                        <!-- <input type="range" > -->
+                    </div>
+                </div>
+                <div class="mb-2 hr">
+                    <label for="drawingMode"> Turn Drawing mode </label> &nbsp;
+                    <!-- <div> -->
+                        <button id="drawingMode" class="btn" [ngClass]="{'btn-danger':drawingMode == 'OFF',  'btn-success' : drawingMode == 'ON'}" (click)="changeDrawingMode()">{{drawingMode}}</button>
+                    <!-- </div> -->
+                </div>
+                <div class="mb-4 hr">
+                    <label for="fileUpload">Upload file</label>
+                    <!-- <div> -->
+                        <input type="file" id="fileUpload" (change)="fileUploaded($event)" accept="image/*">
+                    <!-- </div> -->
+                </div>
+                <div class="mb-2">
+                    <button class="btn btn-danger" (click)="logOut()">Logout</button> &nbsp;&nbsp;
+                    <button class="btn btn-secondary" (click)="canvas.clear()">Clear Canvas</button>
+                </div>
+            </div>
+
+            <p class="notif--text">Your changes will be auto saved every 3 minutes.</p>
+        </div>
+        <!-- <div class="col" style="background-color: red;">
+            <p>this is the side menu</p>  
+            <button class="secondary"> Hello</button>          
+        </div> -->
+        
+        <div class="col" style="background-color: rgb(240, 240, 240); position: relative; border-left: 1px solid black;">
+            <canvas id="canvasEl"></canvas>
+
+            <span class="notif animate__slideInUp animate__animated" *ngIf="notifier">Saving your new changes...</span>
+
+        </div>
+    </div>
+</section>
+<!-- <p>canvas works</p>        -->
