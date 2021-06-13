@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pencilcanvas-5e503": {
+      "hosting": {
+        "canvas-app": [
+          "pencilcanvas-5e503"
+        ]
+      }
+    }
+  }
+}
